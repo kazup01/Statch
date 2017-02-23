@@ -1,23 +1,19 @@
 {
-  "name": "statch",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "Statch",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "react-scripts": "0.9.0"
+  },
   "dependencies": {
-    "react": "^15.4.2"
+    "express": "^4.14.1",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
   },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kazup01/Statch.git"
-  },
-  "author": "kazup",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/kazup01/Statch/issues"
-  },
-  "homepage": "https://github.com/kazup01/Statch#readme"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
 }
