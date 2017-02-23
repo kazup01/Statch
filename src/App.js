@@ -1,13 +1,14 @@
 import React from 'react';
+import './App.css'
+import TopBarComponent from './topBar/TopBarComponent'
+import MainComponent from './main/MainComponent'
 
 export default React.createClass({
   render(){
     return(
-      <div>
-        <div>
-          <h2>Welcome to React</h2>
-        </div>
-        <p>To get started, edit <code>src/App.js</code> and save to reload.</p>
+      <div className="App">
+        <TopBarComponent />
+        <MainComponent />
       </div>
     )
   }
