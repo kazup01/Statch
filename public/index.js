@@ -9767,6 +9767,10 @@ var _MainComponent = __webpack_require__(85);
 
 var _MainComponent2 = _interopRequireDefault(_MainComponent);
 
+var _SideNavComponent = __webpack_require__(88);
+
+var _SideNavComponent2 = _interopRequireDefault(_SideNavComponent);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _react2.default.createClass({
@@ -9774,8 +9778,9 @@ exports.default = _react2.default.createClass({
   render: function render() {
     return _react2.default.createElement(
       'div',
-      { className: 'App' },
+      null,
       _react2.default.createElement(_TopBarComponent2.default, null),
+      _react2.default.createElement(_SideNavComponent2.default, null),
       _react2.default.createElement(_MainComponent2.default, null)
     );
   }
@@ -9834,10 +9839,6 @@ var _react2 = _interopRequireDefault(_react);
 
 __webpack_require__(196);
 
-var _SideNavComponent = __webpack_require__(88);
-
-var _SideNavComponent2 = _interopRequireDefault(_SideNavComponent);
-
 var _TimerComponent = __webpack_require__(89);
 
 var _TimerComponent2 = _interopRequireDefault(_TimerComponent);
@@ -9854,7 +9855,6 @@ exports.default = _react2.default.createClass({
     return _react2.default.createElement(
       'div',
       { className: 'Main' },
-      _react2.default.createElement(_SideNavComponent2.default, null),
       _react2.default.createElement(_TimerComponent2.default, null),
       _react2.default.createElement(_NoteDetailComponent2.default, null)
     );
@@ -10028,7 +10028,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".App{\n  display: table;\n}\n", ""]);
 
 // exports
 
@@ -10056,7 +10056,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".Main{\n  display: table-cell;\n}\n", ""]);
 
 // exports
 
@@ -10098,7 +10098,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".SideNav{\n  display: table-cell;\n}\n", ""]);
 
 // exports
 
@@ -10112,7 +10112,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".Timer{\n  display: table-cell;\n}\n", ""]);
 
 // exports
 
