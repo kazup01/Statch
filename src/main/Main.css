@@ -1,3 +1,7 @@
 .Main{
   display: table-cell;
+  width: 500px;
+  background-color: #f6f6f6;
+    z-index: -1;
+      position: relative;
 }
