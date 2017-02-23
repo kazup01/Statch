@@ -9976,15 +9976,57 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = _react2.default.createClass({
   displayName: 'TimerComponent',
+  getInitialState: function getInitialState() {
+    return {
+      elapsed: 0,
+      running: false
+    };
+  },
+  handleStartClick: function handleStartClick() {
+    clearInterval(this.interval);
+    this.interval = setInterval(this.updateElapsed, 100);
+    this.setState({ running: true });
+  },
+  updateElapsed: function updateElapsed() {
+    this.setState({ elapsed: this.state.elapsed + 1 });
+  },
+  handleStopClick: function handleStopClick() {
+    clearInterval(this.interval);
+    this.setState({ running: false });
+  },
+  handleResetClick: function handleResetClick() {
+    this.setState({
+      elapsed: 0
+    });
+  },
+  getSeconds: function getSeconds(elapsed) {
+    return elapsed / 10 + (elapsed % 10 > 0 ? '' : '.0');
+  },
   render: function render() {
+    var _this = this;
     return _react2.default.createElement(
       'div',
-      { className: 'Timer' },
+      null,
       _react2.default.createElement(
         'p',
         null,
-        'timer'
-      )
+        'time: ',
+        this.getSeconds(this.state.elapsed)
+      ),
+      this.state.running ? _react2.default.createElement(
+        'button',
+        { onClick: this.handleStopClick },
+        'Pause'
+      ) : _react2.default.createElement(
+        'button',
+        { onClick: this.handleStartClick },
+        'Start'
+      ),
+      this.state.elapsed > 0 && !this.state.running ? _react2.default.createElement(
+        'button',
+        { onClick: this.handleResetClick },
+        'Reset'
+      ) : _react2.default.createElement('button', null)
     );
   }
 });
