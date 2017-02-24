@@ -10098,7 +10098,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, ".Main{\n  display: table-cell;\n  width: 500px;\n  background-color: #f6f6f6;\n    z-index: -1;\n      position: relative;\n}\n", ""]);
+exports.push([module.i, ".Main{\n  display: table-cell;\n  width: 500px;\n  background-color: #f6f6f6;\n/*\n  z-index: -1;\n  position: relative;\n*/\n}\n", ""]);
 
 // exports
 
@@ -10140,7 +10140,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, ".SideNav{\n  display: table-cell;\n  width: 300px;\n  background-color: #1f2532;\n    z-index: -1;\n      position: relative;\n}\n", ""]);
+exports.push([module.i, ".SideNav{\n  display: table-cell;\n  width: 300px;\n  background-color: #1f2532;\n/*\n  z-index: -1;\n  position: relative;\n*/\n}\n", ""]);
 
 // exports
 
