@@ -9886,7 +9886,7 @@ exports.default = _react2.default.createClass({
     return _react2.default.createElement(
       'div',
       { className: 'NoteDetail' },
-      'detail'
+      '--- Notedetail'
     );
   }
 });
@@ -10018,9 +10018,23 @@ exports.default = _react2.default.createClass({
       function () {
         if (_this2.state.elapsed > 0 && !_this2.state.running) {
           return _react2.default.createElement(
-            'button',
-            { onClick: _this2.handleResetClick },
-            'Reset'
+            'div',
+            null,
+            _react2.default.createElement(
+              'button',
+              { onClick: _this2.handleStartClick },
+              'Start'
+            ),
+            _react2.default.createElement(
+              'button',
+              { onClick: _this2.handleResetClick },
+              'Reset'
+            ),
+            _react2.default.createElement(
+              'button',
+              null,
+              'Save'
+            )
           );
         } else if (_this2.state.running) {
           return _react2.default.createElement(

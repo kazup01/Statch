@@ -5,7 +5,8 @@ export default React.createClass({
   render(){
     return(
       <div className="NoteDetail">
-        detail
+      ---
+        Notedetail
       </div>
     )
   }

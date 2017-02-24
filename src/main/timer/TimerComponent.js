@@ -35,7 +35,13 @@ export default React.createClass({
         <p>time: {this.getSeconds(this.state.elapsed)}</p>
         {(() => {
           if (this.state.elapsed > 0 && !this.state.running) {
-            return <button onClick={this.handleResetClick}>Reset</button>;
+            return (
+              <div>
+                <button onClick={this.handleStartClick}>Start</button>
+                <button onClick={this.handleResetClick}>Reset</button>
+                <button>Save</button>
+              </div>
+            )
           } else if(this.state.running) {
             return <button onClick={this.handleStopClick}>Pause</button>;
           } else {
