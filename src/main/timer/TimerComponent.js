@@ -33,16 +33,16 @@ export default React.createClass({
     return(
       <div>
         <p>time: {this.getSeconds(this.state.elapsed)}</p>
-        {
-          (this.state.running)
-          ? <button onClick={this.handleStopClick}>Pause</button>
-          : <button onClick={this.handleStartClick}>Start</button>
-        }
-        {
-          (this.state.elapsed > 0 && !this.state.running)
-          ? <button onClick={this.handleResetClick}>Reset</button>
-          : <button>Save</button>
-        }
+        {(() => {
+          if (this.state.elapsed > 0 && !this.state.running) {
+            return <button onClick={this.handleResetClick}>Reset</button>;
+          } else if(this.state.running) {
+            return <button onClick={this.handleStopClick}>Pause</button>;
+          } else {
+            return <button onClick={this.handleStartClick}>Start</button>;
+          }
+        })()}
+
       </div>
     );
   }

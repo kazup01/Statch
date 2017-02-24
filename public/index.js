@@ -10003,6 +10003,8 @@ exports.default = _react2.default.createClass({
     return elapsed / 10 + (elapsed % 10 > 0 ? '' : '.0');
   },
   render: function render() {
+    var _this2 = this;
+
     var _this = this;
     return _react2.default.createElement(
       'div',
@@ -10013,24 +10015,27 @@ exports.default = _react2.default.createClass({
         'time: ',
         this.getSeconds(this.state.elapsed)
       ),
-      this.state.running ? _react2.default.createElement(
-        'button',
-        { onClick: this.handleStopClick },
-        'Pause'
-      ) : _react2.default.createElement(
-        'button',
-        { onClick: this.handleStartClick },
-        'Start'
-      ),
-      this.state.elapsed > 0 && !this.state.running ? _react2.default.createElement(
-        'button',
-        { onClick: this.handleResetClick },
-        'Reset'
-      ) : _react2.default.createElement(
-        'button',
-        null,
-        'Save'
-      )
+      function () {
+        if (_this2.state.elapsed > 0 && !_this2.state.running) {
+          return _react2.default.createElement(
+            'button',
+            { onClick: _this2.handleResetClick },
+            'Reset'
+          );
+        } else if (_this2.state.running) {
+          return _react2.default.createElement(
+            'button',
+            { onClick: _this2.handleStopClick },
+            'Pause'
+          );
+        } else {
+          return _react2.default.createElement(
+            'button',
+            { onClick: _this2.handleStartClick },
+            'Start'
+          );
+        }
+      }()
     );
   }
 });
