@@ -10026,7 +10026,11 @@ exports.default = _react2.default.createClass({
         'button',
         { onClick: this.handleResetClick },
         'Reset'
-      ) : _react2.default.createElement('button', null)
+      ) : _react2.default.createElement(
+        'button',
+        null,
+        'Save'
+      )
     );
   }
 });

@@ -41,7 +41,7 @@ export default React.createClass({
         {
           (this.state.elapsed > 0 && !this.state.running)
           ? <button onClick={this.handleResetClick}>Reset</button>
-          : <button></button>
+          : <button>Save</button>
         }
       </div>
     );
