@@ -12,7 +12,7 @@ connection.query('CREATE DATABASE IF NOT EXISTS statch', function (err){
         connection.query('CREATE TABLE IF NOT EXISTS timer('
             + 'id INT NOT NULL AUTO_INCREMENT,'
             + 'PRIMARY KEY(id),'
-            + 'name VARCHAR(30)'
+            + 'comment VARCHAR(30)'
             +  ')', function (err) {
                 if (err) throw err;
             });
@@ -33,7 +33,7 @@ app.post('/timer', function (req, res) {
     connection.query('INSERT INTO timer SET ?', req.body,
         function (err, result) {
             if (err) throw err;
-            res.send('Timer added to database with ID: ' + result.insertId);
+            res.send('Comment added to database with ID: ' + result.insertId);
         }
     );
 });

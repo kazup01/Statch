@@ -9885,9 +9885,9 @@ exports.default = _react2.default.createClass({
 
     render: function render() {
         $(document).ready(function () {
-            $('#user-submit').click(function () {
+            $('#timer-submit').click(function () {
                 var payload = {
-                    name: $('#user-name').val()
+                    comment: $('#comment').val()
                 };
                 $.ajax({
                     url: "/timer",
@@ -9907,10 +9907,10 @@ exports.default = _react2.default.createClass({
             _react2.default.createElement(
                 'h3',
                 null,
-                'Enter a username to enter into the database:'
+                'Enter comment to enter into the database:'
             ),
-            _react2.default.createElement('input', { id: 'user-name', type: 'text' }),
-            _react2.default.createElement('input', { id: 'user-submit', type: 'submit' }),
+            _react2.default.createElement('input', { id: 'comment', type: 'text' }),
+            _react2.default.createElement('input', { id: 'timer-submit', type: 'submit' }),
             _react2.default.createElement('p', { id: 'output' })
         );
     }
