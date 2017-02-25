@@ -1,11 +1,11 @@
-var mysql = require('mysql')
+const mysql = require('mysql')
 
-var dbConfig = {
+const dbConfig = {
   host: 'localhost',
   user: 'root',
   password: ''
 };
 
-var connection = mysql.createConnection(dbConfig);
+const connection = mysql.createConnection(dbConfig);
 
 module.exports = connection;

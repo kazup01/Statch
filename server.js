@@ -1,7 +1,7 @@
-var express = require('express')
-var mysql = require('mysql')
-var connection = require('./mysqlConnection')
-var app = express()
+const express = require('express')
+const mysql = require('mysql')
+const connection = require('./mysqlConnection')
+const app = express()
 
 connection.query('CREATE DATABASE IF NOT EXISTS statch', function (err){
   if(err) throw err;
