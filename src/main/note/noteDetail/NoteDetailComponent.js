@@ -6,7 +6,7 @@ export default React.createClass({
     return(
       <div className="NoteDetail">
       ---
-        Notedetail
+        Notedetailasd
       </div>
     )
   }
