@@ -29,8 +29,25 @@ export default React.createClass({
   getSeconds(elapsed){
     return elapsed / 10 + (elapsed % 10 > 0 ? '' : '.0');
   },
-  render(){
+  render: function(){
     var _this = this;
+    $(document).ready(function(){
+      $('#timer-submit').click(function(){
+        var timeload = {
+          time: $('#time').val()
+        };
+        $.ajax({
+          url: "/timer",
+          type: "POST",
+          contentType: "application/json",
+          processData: false,
+          data: JSON.stringify(timeload),
+          complete: function(data){
+            $('#output').html(data.responseText);
+          }
+        });
+      })
+    })
     return(
       <div>
         <p>time: {this.getSeconds(this.state.elapsed)}</p>

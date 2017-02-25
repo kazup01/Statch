@@ -49,6 +49,15 @@ app.post('/comment', function (req, res) {
     );
 });
 
+app.post('/timer', function(req, res){
+  connection.query('INSERT INTO timer SET ?', req.body,
+      function(err, result){
+          if(err) throw err;
+          res.send('Ok, nice study!' + result.insertId);
+      }
+    );
+});
+
 
 app.listen(3000, () => {
   console.log('Server running on port 3000');
