@@ -10948,12 +10948,12 @@ exports.default = _react2.default.createClass({
 
     render: function render() {
         $(document).ready(function () {
-            $('#timer-submit').click(function () {
+            $('#comment-submit').click(function () {
                 var payload = {
                     comment: $('#comment').val()
                 };
                 $.ajax({
-                    url: "/timer",
+                    url: "/comment",
                     type: "POST",
                     contentType: "application/json",
                     processData: false,
@@ -10975,7 +10975,7 @@ exports.default = _react2.default.createClass({
             _react2.default.createElement(_input2.default, { id: 'comment', type: 'text' }),
             _react2.default.createElement(
                 _button2.default,
-                { id: 'timer-submit', type: 'submit' },
+                { id: 'comment-submit', type: 'submit' },
                 'Submit'
             ),
             _react2.default.createElement('p', { id: 'output' })
@@ -11128,7 +11128,7 @@ exports.default = _react2.default.createClass({
             ),
             _react2.default.createElement(
               _button2.default,
-              null,
+              { type: 'submit' },
               'Save'
             )
           );

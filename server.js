@@ -9,14 +9,25 @@ connection.query('CREATE DATABASE IF NOT EXISTS statch', function (err){
   if(err) throw err;
   connection.query('USE statch', function (err) {
         if (err) throw err;
-        connection.query('CREATE TABLE IF NOT EXISTS timer('
+        connection.query('CREATE TABLE IF NOT EXISTS comment('
             + 'id INT NOT NULL AUTO_INCREMENT,'
             + 'PRIMARY KEY(id),'
             + 'comment VARCHAR(30)'
-            +  ')', function (err) {
+            +  ')',
+            function (err) {
                 if (err) throw err;
-            });
-    });
+            }
+        );
+        connection.query('CREATE TABLE IF NOT EXISTS timer('
+            + 'id INT NOT NULL AUTO_INCREMENT,'
+            + 'PRIMARY KEY(id),'
+            + 'timer INT(30)'
+            +  ')',
+            function (err) {
+                if (err) throw err;
+            }
+        );
+  });
 })
 
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -29,8 +40,8 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, './public', 'index.html'));
 })
 
-app.post('/timer', function (req, res) {
-    connection.query('INSERT INTO timer SET ?', req.body,
+app.post('/comment', function (req, res) {
+    connection.query('INSERT INTO comment SET ?', req.body,
         function (err, result) {
             if (err) throw err;
             res.send('Comment added to database with ID: ' + result.insertId);

@@ -6,12 +6,12 @@ import './NoteDetail.css'
 export default React.createClass({
   render: function(){
     $(document).ready(function () {
-            $('#timer-submit').click(function () {
+            $('#comment-submit').click(function () {
                 var payload = {
                     comment: $('#comment').val()
                 };
                 $.ajax({
-                    url: "/timer",
+                    url: "/comment",
                     type: "POST",
                     contentType: "application/json",
                     processData: false,
@@ -26,7 +26,7 @@ export default React.createClass({
       <div className="NoteDetail">
       <h3>Enter comment to enter into the database:</h3>
           <Input id="comment" type="text" />
-          <Button id="timer-submit" type="submit">Submit</Button>
+          <Button id="comment-submit" type="submit">Submit</Button>
           <p id="output"></p>
       </div>
     )

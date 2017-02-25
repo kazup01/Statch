@@ -40,7 +40,7 @@ export default React.createClass({
               <div>
                 <Button onClick={this.handleStartClick}>Restart</Button>
                 <Button onClick={this.handleResetClick}>Reset</Button>
-                <Button>Save</Button>
+                <Button type="submit">Save</Button>
               </div>
             )
           } else if(this.state.running) {
