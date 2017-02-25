@@ -48,7 +48,6 @@ export default React.createClass({
             return <button onClick={this.handleStartClick}>Start</button>;
           }
         })()}
-
       </div>
     );
   }

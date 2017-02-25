@@ -3,6 +3,7 @@ const mysql = require('mysql')
 const connection = require('./mysqlConnection')
 const moment = require('moment')
 const app = express()
+const bodyParser = require('body-parser')
 
 connection.query('CREATE DATABASE IF NOT EXISTS statch', function (err){
   if(err) throw err;
@@ -18,6 +19,10 @@ connection.query('CREATE DATABASE IF NOT EXISTS statch', function (err){
     });
 })
 
+app.use(bodyParser.urlencoded({ extended: false }))
+
+app.use(bodyParser.json())
+
 app.use(express.static('public'))
 
 app.get('/', (req, res) => {
@@ -25,10 +30,10 @@ app.get('/', (req, res) => {
 })
 
 app.post('/timer', function (req, res) {
-    connection.query('INSERT INTO users SET ?', req.body,
+    connection.query('INSERT INTO timer SET ?', req.body,
         function (err, result) {
             if (err) throw err;
-            res.send('User added to database with ID: ' + result.insertId);
+            res.send('Timer added to database with ID: ' + result.insertId);
         }
     );
 });

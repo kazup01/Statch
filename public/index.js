@@ -9869,7 +9869,7 @@ exports.default = _react2.default.createClass({
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 
 var _react = __webpack_require__(13);
@@ -9881,14 +9881,39 @@ __webpack_require__(197);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = _react2.default.createClass({
-  displayName: 'NoteDetailComponent',
-  render: function render() {
-    return _react2.default.createElement(
-      'div',
-      { className: 'NoteDetail' },
-      '--- Notedetailasd'
-    );
-  }
+    displayName: 'NoteDetailComponent',
+
+    render: function render() {
+        $(document).ready(function () {
+            $('#user-submit').click(function () {
+                var payload = {
+                    name: $('#user-name').val()
+                };
+                $.ajax({
+                    url: "/timer",
+                    type: "POST",
+                    contentType: "application/json",
+                    processData: false,
+                    data: JSON.stringify(payload),
+                    complete: function complete(data) {
+                        $('#output').html(data.responseText);
+                    }
+                });
+            });
+        });
+        return _react2.default.createElement(
+            'div',
+            { className: 'NoteDetail' },
+            _react2.default.createElement(
+                'h3',
+                null,
+                'Enter a username to enter into the database:'
+            ),
+            _react2.default.createElement('input', { id: 'user-name', type: 'text' }),
+            _react2.default.createElement('input', { id: 'user-submit', type: 'submit' }),
+            _react2.default.createElement('p', { id: 'output' })
+        );
+    }
 });
 
 /***/ },
