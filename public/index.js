@@ -10023,7 +10023,7 @@ exports.default = _react2.default.createClass({
             _react2.default.createElement(
               'button',
               { onClick: _this2.handleStartClick },
-              'Start'
+              'Restart'
             ),
             _react2.default.createElement(
               'button',
