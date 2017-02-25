@@ -1,4 +1,6 @@
 import React from 'react';
+import Button from 'muicss/lib/react/button'
+import Input from 'muicss/lib/react/input'
 import './NoteDetail.css'
 
 export default React.createClass({
@@ -23,8 +25,8 @@ export default React.createClass({
     return(
       <div className="NoteDetail">
       <h3>Enter comment to enter into the database:</h3>
-          <input id="comment" type="text" />
-          <input id="timer-submit" type="submit" />
+          <Input id="comment" type="text" />
+          <Button id="timer-submit" type="submit">Submit</Button>
           <p id="output"></p>
       </div>
     )

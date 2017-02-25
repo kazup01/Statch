@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from 'muicss/lib/react/button'
 import './Timer.css';
 
 export default React.createClass({
@@ -37,15 +38,15 @@ export default React.createClass({
           if (this.state.elapsed > 0 && !this.state.running) {
             return (
               <div>
-                <button onClick={this.handleStartClick}>Restart</button>
-                <button onClick={this.handleResetClick}>Reset</button>
-                <button>Save</button>
+                <Button onClick={this.handleStartClick}>Restart</Button>
+                <Button onClick={this.handleResetClick}>Reset</Button>
+                <Button>Save</Button>
               </div>
             )
           } else if(this.state.running) {
-            return <button onClick={this.handleStopClick}>Pause</button>;
+            return <Button onClick={this.handleStopClick}>Pause</Button>;
           } else {
-            return <button onClick={this.handleStartClick}>Start</button>;
+            return <Button onClick={this.handleStartClick}>Start</Button>;
           }
         })()}
       </div>
