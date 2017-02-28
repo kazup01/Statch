@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from 'muicss/lib/react/button'
+import Input from 'muicss/lib/react/input'
 import './Timer.css';
 
 export default React.createClass({
@@ -43,11 +44,11 @@ export default React.createClass({
           processData: false,
           data: JSON.stringify(timeload),
           complete: function(data){
-            $('#output').html(data.responseText);
+            $('#outputTime').html(data.responseText);
           }
         });
-      })
-    })
+      });
+    });
     return(
       <div>
         <p>time: {this.getSeconds(this.state.elapsed)}</p>
@@ -57,7 +58,8 @@ export default React.createClass({
               <div>
                 <Button onClick={this.handleStartClick}>Restart</Button>
                 <Button onClick={this.handleResetClick}>Reset</Button>
-                <Button type="submit">Save</Button>
+                <Button id="timer-submit" type="submit" value={this.getSeconds(this.state.elapsed)}>Save</Button>
+                <p id="outputTime"></p>
               </div>
             )
           } else if(this.state.running) {

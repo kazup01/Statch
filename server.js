@@ -9,19 +9,19 @@ connection.query('CREATE DATABASE IF NOT EXISTS statch', function (err){
   if(err) throw err;
   connection.query('USE statch', function (err) {
         if (err) throw err;
-        connection.query('CREATE TABLE IF NOT EXISTS comment('
+        connection.query('CREATE TABLE IF NOT EXISTS timer('
             + 'id INT NOT NULL AUTO_INCREMENT,'
             + 'PRIMARY KEY(id),'
-            + 'comment VARCHAR(30)'
+            + 'timer INT(30)'
             +  ')',
             function (err) {
                 if (err) throw err;
             }
         );
-        connection.query('CREATE TABLE IF NOT EXISTS timer('
+        connection.query('CREATE TABLE IF NOT EXISTS comment('
             + 'id INT NOT NULL AUTO_INCREMENT,'
             + 'PRIMARY KEY(id),'
-            + 'timer INT(30)'
+            + 'comment VARCHAR(30)'
             +  ')',
             function (err) {
                 if (err) throw err;
@@ -45,6 +45,7 @@ app.post('/comment', function (req, res) {
         function (err, result) {
             if (err) throw err;
             res.send('Comment added to database with ID: ' + result.insertId);
+            console.log('comment post');
         }
     );
 });
@@ -54,6 +55,7 @@ app.post('/timer', function(req, res){
       function(err, result){
           if(err) throw err;
           res.send('Ok, nice study!' + result.insertId);
+          console.log('timer post');
       }
     );
 });
