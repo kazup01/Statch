@@ -11205,7 +11205,7 @@ exports.default = _react2.default.createClass({
             ),
             _react2.default.createElement(
               _button2.default,
-              { id: 'timer-submit', type: 'submit', value: _this2.getSeconds(_this2.state.elapsed) },
+              { id: 'timer-submit', type: 'submit' },
               'Save'
             ),
             _react2.default.createElement('p', { id: 'outputTime' })

@@ -58,7 +58,7 @@ export default React.createClass({
               <div>
                 <Button onClick={this.handleStartClick}>Restart</Button>
                 <Button onClick={this.handleResetClick}>Reset</Button>
-                <Button id="timer-submit" type="submit" value={this.getSeconds(this.state.elapsed)}>Save</Button>
+                <Button id="timer-submit" type="submit">Save</Button>
                 <p id="outputTime"></p>
               </div>
             )
