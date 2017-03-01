@@ -10,9 +10,7 @@ connection.query('CREATE DATABASE IF NOT EXISTS statch', function (err){
   connection.query('USE statch', function (err) {
         if (err) throw err;
         connection.query('CREATE TABLE IF NOT EXISTS timer('
-            + 'id INT NOT NULL AUTO_INCREMENT,'
-            + 'PRIMARY KEY(id),'
-            + 'timer INT(30)'
+            + 'timer INT(4)'
             +  ')',
             function (err) {
                 if (err) throw err;

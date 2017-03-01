@@ -34,9 +34,7 @@ export default React.createClass({
     var _this = this;
     $(document).ready(function(){
       $('#timer-submit').click(function(){
-        var timeload = {
-          time: $('#time').val()
-        };
+        var timeload = {timer: $('#timer').val()};
         $.ajax({
           url: "/timer",
           type: "POST",
@@ -58,6 +56,7 @@ export default React.createClass({
               <div>
                 <Button onClick={this.handleStartClick}>Restart</Button>
                 <Button onClick={this.handleResetClick}>Reset</Button>
+                <p id="timer">{this.getSeconds(this.state.elapsed)}</p>
                 <Button id="timer-submit" type="submit">Save</Button>
                 <p id="outputTime"></p>
               </div>

@@ -11164,9 +11164,7 @@ exports.default = _react2.default.createClass({
     var _this = this;
     $(document).ready(function () {
       $('#timer-submit').click(function () {
-        var timeload = {
-          time: $('#time').val()
-        };
+        var timeload = { timer: $('#timer').val() };
         $.ajax({
           url: "/timer",
           type: "POST",
@@ -11202,6 +11200,11 @@ exports.default = _react2.default.createClass({
               _button2.default,
               { onClick: _this2.handleResetClick },
               'Reset'
+            ),
+            _react2.default.createElement(
+              'p',
+              { id: 'timer' },
+              _this2.getSeconds(_this2.state.elapsed)
             ),
             _react2.default.createElement(
               _button2.default,
